@@ -1,0 +1,118 @@
+/*sidebar css */
+.sidebar{
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    height: 95%;
+    width: 78px;
+    background: #9b3131;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+    border-radius: 23px;
+  }
+  .sidebar #btn{
+    position: absolute;
+    color: #fff;
+    top: 15px;
+    left: 50%;
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+  }
+  .sidebar ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    margin: 10px 0;
+  }
+  .sidebar ul li .tooltip{
+    position: absolute;
+    left: 125px;
+    top: 0;
+    transform: translate(-50% , -50%);
+    border-radius: 15px;
+    height: 35px;
+    width: 115px;
+    background: #f0e7da;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+  }
+  .sidebar.active ul li .tooltip{
+    display: none;
+  }
+  .sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 0.9;
+    top: 50%
+  }
+  .sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 14px;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+  }
+  
+  .sidebar ul li a:hover{
+    color: #9b3131;
+    background: #fff;
+  }
+  
+  .active-page{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 14px;
+    white-space: nowrap;
+    background: #d4c8be;
+  }
+  
+  
+  .sidebar ul li i{
+    font-size: 22px;
+    font-weight: 400;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .sidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .profile #log_out{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: #1d1b31;
+  }
+  
+  .sidebar .profile:hover {
+    color: #986c62;
+    opacity: 0.8;
+  }

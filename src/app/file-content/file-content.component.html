@@ -1,0 +1,142 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://kit.fontawesome.com/821113cfbe.js" crossorigin="anonymous"></script>
+<section class="hero">
+        <div class="block-one">
+            <div class="sidebar">
+                    <div class="logo_content">
+                        <div class="logo"><br><br>
+                        </div>
+                        <br><br> <i class='bx bx-menu' id="btn" title="sidebar" ></i>
+                    </div>
+                    <ul class="nav_list">
+                    <li>
+                        <a href="/dashboard">
+                            <i class='bx bx-grid-alt' ></i>
+                        </a>
+                        <span class="tooltip">Dashboard</span>
+                    </li>
+                    <li>
+                        <a href="/profile">
+                            <i class='bx bx-user' ></i>
+                        </a>
+                        <span class="tooltip">Profile</span>
+                    </li>
+                    <li>
+                        <a href="/feedback">
+                            <i class='bx bx-chat' ></i>
+                        </a>
+                        <span class="tooltip">Feedback</span>
+                    </li>
+                    <li class="active-page">
+                        <a href="/content">
+                            <i class='bx bx-folder'></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/favorites">
+                            <i class='bx bx-heart' ></i>
+                        </a>
+                        <span class="tooltip">Favorites</span>
+                    </li>
+                    <li>
+                        <a href="/settings">
+                            <i class='bx bx-cog' ></i>
+                        </a>
+                        <span class="tooltip">Settings</span>
+                    </li>
+                    </ul>
+                    <div class="profile_content">
+                        <div class="profile">
+                            <i class='bx bx-log-out' id="log_out" title="Log Out"
+                            routerLinkActive="active" routerLink="/login"></i>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="block-two">
+            <div class="main-block">
+                <div class="container">
+                    <h1 class="text-two">/contents</h1>
+                    <div class="search_wrap search_wrap_3">
+                        <div class="search_box">
+                            <input type="text" class="input" placeholder="search...">
+                            <div class="btn btn_common">
+                                <img src="../assets/img/magnifying-glass.png" class="fas fa-search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <br>
+                <br> <div class="container-table">
+
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                        <!--- Note that these columns can be defined in any order.
+                              The actual rendered columns are set as a property on the row definition" -->
+                      
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="id">
+                          <th mat-header-cell *matHeaderCellDef> No. </th>
+                          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                        </ng-container>
+                      
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="title">
+                          <th mat-header-cell *matHeaderCellDef> Title </th>
+                          <td mat-cell *matCellDef="let element" routerLinkActive="active" routerLink="/view-content"> {{element.title}} </td>
+                        </ng-container>
+                        
+                        
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="department">
+                          <th mat-header-cell *matHeaderCellDef> Department </th>
+                          <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+                        </ng-container>
+
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="upload">
+                          <th mat-header-cell *matHeaderCellDef> Upload Date </th>
+                          <td mat-cell *matCellDef="let element"> {{element.upload}} </td>
+                        </ng-container>
+                      
+                        <!-- Symbol Column -->
+                        <ng-container matColumnDef="update">
+                          <th mat-header-cell *matHeaderCellDef> Update Date </th>
+                          <td mat-cell *matCellDef="let element"> {{element.update}} </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <div class="paginator-container">
+                        <br> <mat-paginator [pageSizeOptions]="[8]" showFirstLastButtons></mat-paginator>
+                    </div>     
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
+                </div>                 
+            </div>
+        </div>
+        <div class="block-three">
+            <div class>
+                <h1 class="text-three">Welcome to</h1>
+                <img class="school-logo" src="../assets/img/msu-logo.png" alt="school-logo">
+                <h1 class="text-four">Thesis Repository</h1>
+                <iframe class="time" src="https://free.timeanddate.com/clock/i7u3fl1q/n4192/fn8/fs26/fceee/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                <div class="college">Browse by Department:
+                <div class="paragraph">
+                <p class="paragraph-content">
+                    BS in Information Technology</p></div>
+                <div class="paragraph">
+                    <p class="paragraph-content">
+                        BS in Biology
+                    </p></div>
+                <div class="paragraph">
+                    <p class="paragraph-content">
+                    BS in Mathematics
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    </section>
