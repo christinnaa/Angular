@@ -266,7 +266,7 @@ transition: all 1s ease
 .search_wrap{
 	width: 490px;
   margin-left: 565px;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .search_wrap .search_box{
@@ -337,6 +337,10 @@ table {
   width: 250px;
 }
 
+.department-table {
+  width: 500px;
+}
+
 .mat-table{
     transition: none !important;
     box-shadow: none !important; 
@@ -361,7 +365,7 @@ table {
   height: 25px;
   color: #986c62;
   margin-top: 5px !important;
-  margin-left: 150px;
+  margin-left: 90px;
 }
 
 .delete-icon:hover {

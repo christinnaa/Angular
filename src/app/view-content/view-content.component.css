@@ -276,36 +276,22 @@ body{
 }
 .input-text {
   text-align: left;
-  font-size: 15px;
-  margin-left: 10px;
+  font-size: 16px;
+  margin-left: 13px;
+  color: #6d1919;
 }
 
-.info-box{
+.form-control{
   background-color: #fff;
   border-radius: 20px;
   border: 2.5px solid #986c62; 
-	padding: 8px 15px;
-	margin: 5px 6px;
+	padding: 9px 15px;
+	margin: 9px 6px;
 	width: 330px;
   font-size: 16px;
   outline: none;
 }
 .info-box:focus {
-  border: solid 3px #c74646;
-}
-
-.description-box{
-  background-color: #fff;
-  border-radius: 20px;
-  border: 2.5px solid #986c62; 
-	padding: 8px 15px;
-	margin: 9px 6px;
-	width: 330px;
-  height: 180px;
-  font-size: 16px;
-  outline: none;
-}
-.description-box:focus {
   border: solid 3px #c74646;
 }
 

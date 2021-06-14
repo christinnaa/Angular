@@ -26,7 +26,7 @@ export class FileContentComponent implements OnInit {
   dataSource: MatTableDataSource<Thesis>;
   @ViewChild(MatPaginator, { static: false })
   paginator: MatPaginator;
-  displayedColumns: string[] = ['title', 'author', 'upload', 'actions'];
+  displayedColumns: string[] = ['title', 'author', 'department', 'actions'];
 
   constructor(private thesisService: ThesisService, private router: Router
     ) { 

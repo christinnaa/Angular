@@ -82,7 +82,7 @@
                         <!-- Name Column -->
                         <ng-container matColumnDef="title">
                           <th mat-header-cell *matHeaderCellDef class="title-table"> Title </th>
-                          <td mat-cell *matCellDef="let thesis"  routerLink="/view-content/{{thesis._id}"> {{thesis.title}} </td>
+                          <td mat-cell *matCellDef="let thesis"  routerLink="/view-content/{{thesis._id}}"> {{thesis.title}} </td>
                         </ng-container>
                         <!-- Name Column -->
                         <ng-container matColumnDef="author">
@@ -113,7 +113,7 @@
                             <th mat-header-cell  *matHeaderCellDef class="actions-table" > </th>
                             <td mat-cell *matCellDef="let thesis; let i = index" > 
                                  <button class="delete-button" (click)="removeThesis (thesis,i)">  
-                                     <mat-icon class="delete-icon"  >delete</mat-icon>
+                                     <mat-icon class="delete-icon">delete</mat-icon>
                                 </button> 
                             </td>
                           </ng-container>
@@ -136,7 +136,8 @@
                 <img class="school-logo" src="../assets/img/msu-logo.png" alt="school-logo">
                 <h1 class="text-four">Thesis Repository</h1>
                 <div class="time-container">
-                <iframe class="time" src="https://free.timeanddate.com/clock/i7uedw70/n4192/fn8/fs26/fcfff/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                <iframe class="time" src="https://free.timeanddate.com/clock/i7uedw70/n4192/fn8/fs26/fcfff/tct/pct/ftb/th2" 
+                frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
                 </div>
                 <div class="college">Browse by Department:
                 <div class="paragraph">

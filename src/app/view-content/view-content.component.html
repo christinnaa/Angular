@@ -64,16 +64,22 @@
             <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
                     <div class="input-container">
                             <div class="input-area-left">
-
-                                
                                 <div class="form-group">
                                     <h5 class="input-text">Title:</h5>
                                     <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
+                                     <!-- error -->
+                                    <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
+                                        Title is required.
+                                    </div>
                                 </div> <br>
                     
                                 <div class="form-group">
                                     <h5 class="input-text">Author:</h5>
                                     <input class="form-control" placeholder="Author Name"type="text" formControlName="author"/>
+                                    <!-- error -->
+                                     <div class="invalid-feedback" *ngIf="submitted && myForm.author.errors?.required">
+                                        Author is required.
+                                    </div>
                                 </div> <br>
 
                                 <div class="form-group">
@@ -81,7 +87,10 @@
                                     <select class="custom-select form-control" name="department_status" id="dept-stat" (change)="updateProfile($any($event.target).value)" formControlName="department">
                                         <option value="" selected disabled hidden>--</option>
                                         <option *ngFor="let deptProfile of DeptProfile" value="{{ deptProfile }}"> {{ deptProfile }}  </option>
-                
+                                        <!-- error -->
+                                        <div class="invalid-feedback" *ngIf="submitted && myForm.department.errors?.required">
+                                            Choose department.
+                                        </div>
                                        
                                         <!-- <option value="jits">Information Technology</option>
                                         <option value="bio">Biology</option>
@@ -98,14 +107,18 @@
                                 <div class="form-group">
                                     <h5 class="input-text">Description:</h5>
                                     <textarea class="form-control" placeholder="Description" 
-                                    name="message" rows="10" cols="30" formControlName="description"></textarea>
+                                    name="message" rows="8" cols="30" formControlName="description"></textarea>
+                                    <!-- error -->
+                                    <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+                                        Description is required.
+                                     </div>
                                 </div>
 
                                 <div class="button-container">
                                     <div class="save-button">
                                         
                                         <div class="form-group">
-                                        <button>Save</button>
+                                        <button type="submit">Save</button>
                                         </div>
 
                                     </div>
