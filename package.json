@@ -1,6 +1,19 @@
 {
   "name": "angular-app",
-  "version": "0.0.0",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.",
+  "main": "karma.conf.js",
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/christinnaa/Angular.git"},
+  "author": "marychristine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinnaa/Angular/issues"
+  },
+  "homepage": "https://github.com/christinnaa/Angular#readme",
+  "keywords": [
+      "mean-app"],
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +34,11 @@
     "@angular/platform-browser": "~11.2.13",
     "@angular/platform-browser-dynamic": "~11.2.13",
     "@angular/router": "~11.2.13",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

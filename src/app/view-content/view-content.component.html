@@ -6,7 +6,8 @@
                     <div class="logo_content">
                         <div class="logo"><br><br>
                         </div>
-                        <br><br> <i class='bx bx-menu' id="btn" title="sidebar" ></i>
+                        <br><br> <i class='bx bx-arrow-back'
+                        routerLinkActive="active" routerLink="/content" id="btn" ></i>
                     </div>
                     <ul class="nav_list">
                     <li>
@@ -56,61 +57,79 @@
         
         <div class="block-two">
             <div class="main-block">
-                <div class="container">
-                    <h1 class="text-two">/view</h1>
-                    <div class="search_wrap search_wrap_3">
-                        <div class="search_box">
-                            <input type="text" class="input" placeholder="search...">
-                            <div class="btn btn_common">
-                                <img src="../assets/img/magnifying-glass.png" class="fas fa-search">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h1>Hello World! :) </h1> <br>  
-                        
-                <div class="input-container">
-                    <div class="upload-area">
-                        <h5>Drag and drop file here <br />or</h5>
-                        <img class="upload-icon" src="" alt="" />
-                        <input class="file-input" name="my_img" type="file">
-                        <input type="hidden" name="default" value="image/default.png">
-                    </div> <br>
+                    <div class="container">
+                        <h1 class="text-two">/update</h1>
+                    </div> <br>         
+                    
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                    <div class="input-container">
+                            <div class="input-area-left">
 
-                    <div class="input-area">
-                        <div class="add-info">
-                          <h5>Title:</h5>
-                           <input class="info-box" type="text" />
-                        </div> <br>
-            
-                        <div class="add-info">
-                            <h5>Author:</h5>
-                          <input class="info-box" type="text" />
-                        </div> <br>
-            
-                        <div class="add-info">
-                            <h5>Department:</h5>
-                            <select class="info-box" name="department_status" id="dept-stat" required>
-                                <option value="" selected disabled hidden>--</option>
-                                <option value="jits">Information Technology</option>
-                                <option value="bio">Biology</option>
-                                <option value="math">Mathematics</option>
-                            </select>
-                        </div>
-                    </div>
+                                
+                                <div class="form-group">
+                                    <h5 class="input-text">Title:</h5>
+                                    <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
+                                </div> <br>
+                    
+                                <div class="form-group">
+                                    <h5 class="input-text">Author:</h5>
+                                    <input class="form-control" placeholder="Author Name"type="text" formControlName="author"/>
+                                </div> <br>
 
-                </div>
+                                <div class="form-group">
+                                    <h5 class="input-text">Department:</h5>
+                                    <select class="custom-select form-control" name="department_status" id="dept-stat" (change)="updateProfile($any($event.target).value)" formControlName="department">
+                                        <option value="" selected disabled hidden>--</option>
+                                        <option *ngFor="let deptProfile of DeptProfile" value="{{ deptProfile }}"> {{ deptProfile }}  </option>
+                
+                                       
+                                        <!-- <option value="jits">Information Technology</option>
+                                        <option value="bio">Biology</option>
+                                        <option value="math">Mathematics</option> -->
+                                    </select>
+                                </div>
 
 
+                             </div>
+
+
+                            <div class="input-area-right">
+                                
+                                <div class="form-group">
+                                    <h5 class="input-text">Description:</h5>
+                                    <textarea class="form-control" placeholder="Description" 
+                                    name="message" rows="10" cols="30" formControlName="description"></textarea>
+                                </div>
+
+                                <div class="button-container">
+                                    <div class="save-button">
+                                        
+                                        <div class="form-group">
+                                        <button>Save</button>
+                                        </div>
+
+                                    </div>
+                               
+                                </div>
+                                
+                                
+                            </div>   
   
+                    </div>
+                </form>
             </div>
         </div>
+
+
+
         <div class="block-three">
             <div class>
                 <h1 class="text-three">Welcome to</h1>
                 <img class="school-logo" src="../assets/img/msu-logo.png" alt="school-logo">
                 <h1 class="text-four">Thesis Repository</h1>
-                <iframe class="time" src="https://free.timeanddate.com/clock/i7u3fl1q/n4192/fn8/fs26/fceee/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                <div class="time-container">
+                <iframe class="time" src="https://free.timeanddate.com/clock/i7uedw70/n4192/fn8/fs26/fcfff/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                </div>
                 <div class="college">Browse by Department:
                 <div class="paragraph">
                 <p class="paragraph-content">

@@ -1,5 +1,6 @@
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://kit.fontawesome.com/821113cfbe.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <section class="hero">
         <div class="block-one">
             <div class="sidebar">
@@ -67,61 +68,76 @@
                         </div>
                     </div>
                 </div>
-                 <br>
-                <br> <div class="container-table">
+                <div class="example-button-row">
+                    <button mat-raised-button class="add-button" routerLinkActive="active" routerLink="/add">Add Thesis</button>
+                </div>
+
+                <div class="container-table">
 
                     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
                         <!--- Note that these columns can be defined in any order.
                               The actual rendered columns are set as a property on the row definition" -->
                       
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="id">
-                          <th mat-header-cell *matHeaderCellDef> No. </th>
-                          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                        </ng-container>
-                      
                         <!-- Name Column -->
                         <ng-container matColumnDef="title">
-                          <th mat-header-cell *matHeaderCellDef> Title </th>
-                          <td mat-cell *matCellDef="let element" routerLinkActive="active" routerLink="/view-content"> {{element.title}} </td>
+                          <th mat-header-cell *matHeaderCellDef class="title-table"> Title </th>
+                          <td mat-cell *matCellDef="let thesis"  routerLink="/view-content/{{thesis._id}"> {{thesis.title}} </td>
                         </ng-container>
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="author">
+                            <th mat-header-cell *matHeaderCellDef class="author-table"> Author </th>
+                            <td mat-cell *matCellDef="let thesis"> {{thesis.author}} </td>
+                          </ng-container>
                         
                         
                         <!-- Name Column -->
-                        <ng-container matColumnDef="department">
+                        <ng-container matColumnDef="department" class="department-table">
                           <th mat-header-cell *matHeaderCellDef> Department </th>
-                          <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+                          <td mat-cell *matCellDef="let thesis"> {{thesis.department}} </td>
                         </ng-container>
 
                         <!-- Weight Column -->
                         <ng-container matColumnDef="upload">
-                          <th mat-header-cell *matHeaderCellDef> Upload Date </th>
-                          <td mat-cell *matCellDef="let element"> {{element.upload}} </td>
+                          <th mat-header-cell *matHeaderCellDef> Date Uploaded </th>
+                          <td mat-cell *matCellDef="let thesis"> {{thesis.upload}} </td>
                         </ng-container>
                       
                         <!-- Symbol Column -->
                         <ng-container matColumnDef="update">
-                          <th mat-header-cell *matHeaderCellDef> Update Date </th>
-                          <td mat-cell *matCellDef="let element"> {{element.update}} </td>
+                          <th mat-header-cell *matHeaderCellDef> Date Updated </th>
+                          <td mat-cell *matCellDef="let thesis"> {{thesis.update}} </td>
                         </ng-container>
-                      
+                        
+                        <ng-container matColumnDef="actions">
+                            <th mat-header-cell  *matHeaderCellDef class="actions-table" > </th>
+                            <td mat-cell *matCellDef="let thesis; let i = index" > 
+                                 <button class="delete-button" (click)="removeThesis (thesis,i)">  
+                                     <mat-icon class="delete-icon"  >delete</mat-icon>
+                                </button> 
+                            </td>
+                          </ng-container>
+
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
+                    </table> <br>
                     <div class="paginator-container">
-                        <br> <mat-paginator [pageSizeOptions]="[8]" showFirstLastButtons></mat-paginator>
+                       <mat-paginator [pageSizeOptions]="[8]" showFirstLastButtons></mat-paginator>
                     </div>     
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
                 </div>                 
             </div>
         </div>
+
+        
         <div class="block-three">
             <div class>
                 <h1 class="text-three">Welcome to</h1>
                 <img class="school-logo" src="../assets/img/msu-logo.png" alt="school-logo">
                 <h1 class="text-four">Thesis Repository</h1>
-                <iframe class="time" src="https://free.timeanddate.com/clock/i7u3fl1q/n4192/fn8/fs26/fceee/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                <div class="time-container">
+                <iframe class="time" src="https://free.timeanddate.com/clock/i7uedw70/n4192/fn8/fs26/fcfff/tct/pct/ftb/th2" frameborder="0" width="174" height="31" allowtransparency="true"></iframe>
+                </div>
                 <div class="college">Browse by Department:
                 <div class="paragraph">
                 <p class="paragraph-content">

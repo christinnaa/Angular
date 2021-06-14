@@ -22,7 +22,7 @@ body{
 
 .block-two {
   position: absolute;
-  margin-left: 88px;
+  margin-left: 86px;
   width: 75%;
   height: 100%;
   background-color:  #fff;
@@ -39,6 +39,7 @@ body{
     margin: auto;
     width: 94%;
     background-color: #fff;
+    margin-top: 10px;
   }
 
 .text-two {
@@ -81,13 +82,22 @@ body{
   width: 130px;
   margin-top: 5px;
 }
+.time-container{
+  border: solid 2px white;
+  background-color: #986c62;
+  width: 200px;
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 25px;
+  box-shadow: 0 0 5px #474747;
+}
 
 .time {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  margin-top: 30px;
 }
 
 .college {
@@ -106,7 +116,7 @@ body{
   margin: 20px 10px;
   cursor: pointer;
   padding: 7px 5px;
-  box-shadow: 0 0 7px;
+  box-shadow: 0 0 7px #e28c8c;
 }
 .paragraph:hover{
 transition: all 1s ease
@@ -125,7 +135,7 @@ transition: all 1s ease
 .sidebar{
   position: absolute;
   top: 18px;
-  left: 8px;
+  left: 9px;
   height: 95%;
   width: 78px;
   background: #9b3131;
@@ -318,9 +328,18 @@ table {
     width: 100%;
   }
 
+.title-table {
+  width: 500px;
+  margin-right: 10px;
+}
+
+.author-table {
+  width: 250px;
+}
+
 .mat-table{
     transition: none !important;
-    box-shadow: none !important;
+    box-shadow: none !important; 
   }
 
 .mat-row:hover {
@@ -332,4 +351,30 @@ table {
   position: absolute;
   bottom: 75px;
   right: 25px;
+}
+.delete-button {
+  background-color: transparent !important;
+  border: transparent;
+}
+.delete-icon {
+  width: 25px;
+  height: 25px;
+  color: #986c62;
+  margin-top: 5px !important;
+  margin-left: 150px;
+}
+
+.delete-icon:hover {
+  color: #9b3131 !important;
+}
+
+.add-button {
+  display: block;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.add-button:hover {
+  background-color: #986c62 !important;
+  color: #fff;
 }
