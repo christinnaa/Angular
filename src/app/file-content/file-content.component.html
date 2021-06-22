@@ -20,13 +20,14 @@
                         <a href="/profile">
                             <i class='bx bx-user' ></i>
                         </a>
-                        <span class="tooltip">Profile</span>
+                        <span class="tooltip">Account</span>
                     </li>
                     <li>
-                        <a href="/feedback">
-                            <i class='bx bx-chat' ></i>
+                        <a href="/add"> 
+                            <i class='bx bx-book-add'
+                            routerLinkActive="active" routerLink="/add"></i>
                         </a>
-                        <span class="tooltip">Feedback</span>
+                        <span class="tooltip">Add Thesis</span>
                     </li>
                     <li class="active-page">
                         <a href="/content">
@@ -67,10 +68,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="example-button-row">
-                    <button mat-raised-button class="add-button" routerLinkActive="active" routerLink="/add">Add Thesis</button>
-                </div>
+                </div> <br>
 
                 <div class="container-table">
 
@@ -89,26 +87,13 @@
                             <th mat-header-cell *matHeaderCellDef class="author-table"> Author </th>
                             <td mat-cell *matCellDef="let thesis"> {{thesis.author}} </td>
                           </ng-container>
-                        
-                        
+                                               
                         <!-- Name Column -->
                         <ng-container matColumnDef="department" class="department-table">
                           <th mat-header-cell *matHeaderCellDef> Department </th>
                           <td mat-cell *matCellDef="let thesis"> {{thesis.department}} </td>
                         </ng-container>
 
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="upload">
-                          <th mat-header-cell *matHeaderCellDef> Date Uploaded </th>
-                          <td mat-cell *matCellDef="let thesis"> {{thesis.upload}} </td>
-                        </ng-container>
-                      
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="update">
-                          <th mat-header-cell *matHeaderCellDef> Date Updated </th>
-                          <td mat-cell *matCellDef="let thesis"> {{thesis.update}} </td>
-                        </ng-container>
-                        
                         <ng-container matColumnDef="actions">
                             <th mat-header-cell  *matHeaderCellDef class="actions-table" > </th>
                             <td mat-cell *matCellDef="let thesis; let i = index" > 
@@ -142,14 +127,14 @@
                 <div class="college">Browse by Department:
                 <div class="paragraph">
                 <p class="paragraph-content">
-                    BS in Information Technology</p></div>
+                    Information Technology</p></div>
                 <div class="paragraph">
                     <p class="paragraph-content">
-                        BS in Biology
+                        Biology
                     </p></div>
                 <div class="paragraph">
                     <p class="paragraph-content">
-                    BS in Mathematics
+                    Mathematics
                     </p>
                 </div>
             </div>

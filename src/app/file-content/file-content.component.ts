@@ -50,18 +50,18 @@ export class FileContentComponent implements OnInit {
   }
 
   removeThesis (thesis: { _id: string; }, index: any) {
-    if(window.confirm('Are you sure?')) {
-     
-        this.thesisService.deleteThesis(thesis._id).subscribe((data: any) => {
+    if(window.confirm('Are you sure you want to permanently delete this content?')) {
+      const data = this.dataSource.data
+        
           
-          this.Thesis.splice ((this.paginator.pageIndex * this.paginator.pageSize) +index, 1);
+          data.splice ((this.paginator.pageIndex * this.paginator.pageSize) +index, 1);
           this.dataSource.data = data;
+          this.thesisService.deleteThesis(thesis._id).subscribe()
         }
-      )    
+          
     }
   }
 
-}
 
 
 

@@ -4,7 +4,6 @@ export interface Thesis {
     author: string;
     department: string;
     description: string;
-    dateUpload: Date;
  }
 
  

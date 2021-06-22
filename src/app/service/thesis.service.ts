@@ -31,7 +31,6 @@ export class ThesisService {
     getThesis(id: string): Observable<Thesis[]> {
       let url = `${this.baseUri}/read/${id}`;
       return this.http.get<Thesis[]>(url, {headers: this.headers}).pipe(
-      
         catchError(this.errorMgmt)
       )
     }

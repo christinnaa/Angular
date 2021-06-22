@@ -23,10 +23,11 @@
                         <span class="tooltip">Profile</span>
                     </li>
                     <li>
-                        <a href="/feedback">
-                            <i class='bx bx-chat' ></i>
+                        <a href="/add"> 
+                            <i class='bx bx-book-add'
+                            routerLinkActive="active" routerLink="/add"></i>
                         </a>
-                        <span class="tooltip">Feedback</span>
+                        <span class="tooltip">Add Thesis</span>
                     </li>
                     <li class="active-page">
                         <a href="/content">
@@ -46,33 +47,30 @@
                         <span class="tooltip">Settings</span>
                     </li>
                     </ul>
-                    <div class="profile_content">
-                        <div class="profile">
-                            <i class='bx bx-log-out' id="log_out" title="Log Out"
-                            routerLinkActive="active" routerLink="/login"></i>
-                        </div>
-                    </div>
             </div>
         </div>
         
         <div class="block-two">
             <div class="main-block">
                     <div class="container">
-                        <h1 class="text-two">/update</h1>
+                        <h1 class="text-two">/view</h1>
                     </div> <br>         
                     
             <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
                     <div class="input-container">
+                        <div class="top-container">
+                            <div class="form-group">
+                                <h5 class="input-text">Title:</h5>
+                                <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
+                                    Title is required.
+                                </div>
+                            </div> <br>
+                        </div>
+
+                        <div class="bottom-container">
                             <div class="input-area-left">
-                                <div class="form-group">
-                                    <h5 class="input-text">Title:</h5>
-                                    <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
-                                     <!-- error -->
-                                    <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
-                                        Title is required.
-                                    </div>
-                                </div> <br>
-                    
                                 <div class="form-group">
                                     <h5 class="input-text">Author:</h5>
                                     <input class="form-control" placeholder="Author Name"type="text" formControlName="author"/>
@@ -80,8 +78,12 @@
                                      <div class="invalid-feedback" *ngIf="submitted && myForm.author.errors?.required">
                                         Author is required.
                                     </div>
-                                </div> <br>
+                                </div>
 
+                             </div>
+
+
+                            <div class="input-area-right">
                                 <div class="form-group">
                                     <h5 class="input-text">Department:</h5>
                                     <select class="custom-select form-control" name="department_status" id="dept-stat" (change)="updateProfile($any($event.target).value)" formControlName="department">
@@ -96,38 +98,30 @@
                                         <option value="bio">Biology</option>
                                         <option value="math">Mathematics</option> -->
                                     </select>
-                                </div>
-
-
-                             </div>
-
-
-                            <div class="input-area-right">
-                                
-                                <div class="form-group">
-                                    <h5 class="input-text">Description:</h5>
-                                    <textarea class="form-control" placeholder="Description" 
-                                    name="message" rows="8" cols="30" formControlName="description"></textarea>
-                                    <!-- error -->
-                                    <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
-                                        Description is required.
-                                     </div>
-                                </div>
-
-                                <div class="button-container">
-                                    <div class="save-button">
-                                        
-                                        <div class="form-group">
-                                        <button type="submit">Save</button>
-                                        </div>
-
-                                    </div>
-                               
-                                </div>
-                                
-                                
+                                </div>                       
                             </div>   
-  
+                        </div>
+
+                        <div class="last-container">
+                            <div class="form-group">
+                                <h5 class="input-text">Description:</h5>
+                                <textarea class="form-control" placeholder="Description" 
+                                name="message" rows="9" cols="30" formControlName="description"></textarea>
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+                                    Description is required.
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="button-container">
+                            <div class="save-button">
+                                <div class="form-group">
+                                <button type="submit">Save</button>
+                                </div>
+                            </div>                       
+                        </div>
+
                     </div>
                 </form>
             </div>

@@ -18,9 +18,10 @@ let Thesis = new Schema(
       type: String
    },
    dateUpload: {
-      type: Date
+      type: Date, default: Date.now()
    }
 },
+
    {
       collection: 'theses'
    })

@@ -22,16 +22,17 @@
                         </a>
                         <span class="tooltip">Profile</span>
                     </li>
-                    <li>
-                        <a href="/feedback">
-                            <i class='bx bx-chat' ></i>
-                        </a>
-                        <span class="tooltip">Feedback</span>
-                    </li>
                     <li class="active-page">
+                        <a href="/add">
+                            <i class='bx bx-book-add' ></i>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/content">
                             <i class='bx bx-folder'></i>
                         </a>
+                        <span class="tooltip">Add Thesis</span>
+
                     </li>
                     <li>
                         <a href="/favorites">
@@ -46,58 +47,88 @@
                         <span class="tooltip">Settings</span>
                     </li>
                     </ul>
-                    <div class="profile_content">
-                        <div class="profile">
-                            <i class='bx bx-log-out' id="log_out" title="Log Out"
-                            routerLinkActive="active" routerLink="/login"></i>
-                        </div>
-                    </div>
             </div>
         </div>
         
         <div class="block-two">
             <div class="main-block">
-                <div class="container">
-                    <h1 class="text-two">/add</h1>
-                </div> <br>         
-                             
-                <div class="input-container">
-                        <div class="input-area-left">
-                            <div class="add-info">
-                                <h5 class="input-text">Title:</h5>
-                                <input class="info-box" placeholder="Thesis Title" type="text" />
-                            </div> <br>
-                
-                            <div class="add-info">
-                                <h5 class="input-text">Author:</h5>
-                                <input class="info-box" placeholder="Author Name"type="text" />
-                            </div> <br>
+                    <div class="container">
+                        <h1 class="text-two">/add</h1>
+                    </div> <br>         
+                    
+                <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                    <div class="input-container">
+                        <div class="top-container">
+                                <div class="form-group">
+                                        <h5 class="input-text">Title:</h5>
+                                        <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
+                                        <!-- error -->
+                                        <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
+                                            Title is required.
+                                        </div>
+                                </div> <br>
+                        </div>
 
-                            <div class="add-info">
-                                <h5 class="input-text">Department:</h5>
-                                <select class="info-box" name="department_status" id="dept-stat" required>
-                                    <option value="" selected disabled hidden>--</option>
-                                    <option value="jits">Information Technology</option>
-                                    <option value="bio">Biology</option>
-                                    <option value="math">Mathematics</option>
-                                </select>
+                        <div class="bottom-container">
+                            <div class="input-area-left">
+                    
+                                <div class="form-group">
+                                    <h5 class="input-text">Author:</h5>
+                                    <input class="form-control" placeholder="Author Email Address"type="text" formControlName="author"/>
+                                    <!-- error -->
+                                     <div class="invalid-feedback" *ngIf="submitted && myForm.author.errors?.required">
+                                        Author is required.
+                                    </div>
+                                </div>
+                             </div>
+
+
+                            <div class="input-area-right">
+                                <div class="form-group">
+                                    <h5 class="input-text">Department:</h5>
+                                    <select class="custom-select form-control" name="department_status" id="dept-stat" (change)="updateProfile($any($event.target).value)" formControlName="department">
+                                        <option value="" selected disabled hidden>--</option>
+                                        <option *ngFor="let deptProfile of DeptProfile" value="{{ deptProfile }}"> {{ deptProfile }}  </option>
+                                        <!-- error -->
+                                        <div class="invalid-feedback" *ngIf="submitted && myForm.department.errors?.required">
+                                            Choose department.
+                                        </div>
+                                       
+                                        <!-- <option value="jits">Information Technology</option>
+                                        <option value="bio">Biology</option>
+                                        <option value="math">Mathematics</option> -->
+                                    </select>
+                                </div>                                                         
+                            </div>   
+                        </div>
+                    
+                        <div class="last-container">
+                            <div class="form-group">
+                                <h5 class="input-text">Description:</h5>
+                                <textarea class="form-control" placeholder="Description" 
+                                name="message" rows="9" cols="30" formControlName="description"></textarea>
+                                <!-- error -->
+                                <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+                                    Description is required.
+                                </div>
                             </div>
                         </div>
-                        <div class="input-area-right">
-                            <div class="description-area">
-                                <h5 class="input-text">Desription:</h5>
-                                <textarea class="description-box" placeholder="Description" name="message" rows="10" cols="30"></textarea>
+                        
+                            <div class="button-container">
+                                <div class="save-button">                                       
+                                    <div class="form-group">
+                                    <button type="submit">Save</button>
+                                    </div>
+                                </div>                               
                             </div>
 
-                            <div class="button-container">
-                                <div class="save-button">
-                                    <button (click)="openDialog()">Save</button>
-                                </div>
-                            </div> 
-                        </div>      
-                </div>
+                    </div> <!--input container-->
+                </form> <!--form container-->
             </div>
-        </div>
+        </div> <!--block two div-->
+
+
+
         <div class="block-three">
             <div class>
                 <h1 class="text-three">Welcome to</h1>

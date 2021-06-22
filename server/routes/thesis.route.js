@@ -56,7 +56,7 @@ thesisRoute.route('/update/:id').put((req, res, next) => {
 
 // Delete Thesis
 thesisRoute.route('/delete/:id').delete((req, res, next) => {
-    Thesis.findOneAndRemove(req.params.id, (error, data) => {
+    Thesis.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {

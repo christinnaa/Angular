@@ -75,7 +75,7 @@ export class ViewContentComponent implements OnInit {
     if (!this.editForm.valid) {
       return;
     } else {
-      if (window.confirm('Are you sure?')) {
+      if (window.confirm('Do you want to update any changes to this content?')) {
         let id = String (this.actRoute.snapshot.paramMap.get('id'));
         this.thesisService.updateThesis(id, this.editForm.value)
           .subscribe(res => {

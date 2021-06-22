@@ -30,9 +30,12 @@ body{
 
 .main-block {
   margin: auto;
-  width: 96%;
+  width: 98%;
   background-color: #fff;
-  height: 100%;
+  height: 95%;
+  margin-top: 18px;
+  border-radius: 23px;
+  border: solid 2.5px #f5f6f2;
 }
 
 .container-table{
@@ -42,8 +45,9 @@ body{
   }
 
 .text-two {
-  margin-top: 40px;
+  margin-top: 27px;
   color: #6d1919;
+  margin-left: 15px;
 }
 
 
@@ -55,7 +59,7 @@ body{
   float: right;
   width: 19%;
   height: 95%;
-  background-color: #9b3131;
+  background-color: #920e0e;
   border-radius: 25px;
 }
 
@@ -135,7 +139,7 @@ body{
   left: 8px;
   height: 95%;
   width: 78px;
-  background: #9b3131;
+  background: #920e0e;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -228,19 +232,6 @@ body{
   left: 0;
   width: 100%;
 }
-.profile #log_out{
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.4s ease;
-  background: #1d1b31;
-}
 
 .sidebar .profile:hover {
   color: #986c62;
@@ -256,50 +247,73 @@ body{
 .container .input{
 	border: 0;
 	outline: none;
-	color: #8b7d77;
-  background-color: rgb(192, 178, 178);
 }
 
 .input-container {
-  display: flex;
-  background-color: #f5f6f2;
-  flex-direction: row;
-  margin-top: 40px;
+  background-color: #fcfcfc;
   margin-left: auto;
   margin-right: auto;
-  width: 65%;
+  width: 75%;
   align-items: center;
-  padding-top: 30px;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 20px;
   border: solid 2.5px #986c62;
 }
+.top-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-container .input-text {
+  text-align: center;
+  font-size: 18px;
+}
+.top-container .form-control {
+  width: 730px;
+}
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+}
 .input-text {
   text-align: left;
-  font-size: 16px;
+  font-size: 17px;
   margin-left: 13px;
   color: #6d1919;
 }
 
 .form-control{
+  display: flex;
   background-color: #fff;
   border-radius: 20px;
   border: 2.5px solid #986c62; 
 	padding: 9px 15px;
 	margin: 9px 6px;
-	width: 330px;
+	width: 325px;
   font-size: 16px;
   outline: none;
 }
-.info-box:focus {
-  border: solid 3px #c74646;
+.form-control:focus {
+  border: solid 3px #c9806a;
+}
+.last-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.last-container .form-control {
+  width: 730px;
 }
 
 .button-container {
   width: 300px;
   display: flex;
   flex-direction: row;
-  margin-top: 6px;
+  margin-top: 5px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -330,6 +344,8 @@ button:focus {
   margin-left: auto;
   margin-right: auto;
   padding-left: 5px;
+  margin-top: 10px;
+  margin-left: 60px;
 }
 
 .input-area-right {
@@ -338,6 +354,8 @@ button:focus {
   margin-left: auto;
   margin-right: auto;
   padding-right: 5px;
+  margin-top: 10px;
+  margin-right: 60px;
 }
 
 .save-button {
