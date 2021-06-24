@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); //mongoose allows us to interact with the mongodb
 const Schema = mongoose.Schema;
 
 // Define collection and schema

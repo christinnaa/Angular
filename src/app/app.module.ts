@@ -11,8 +11,6 @@ import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FileContentComponent } from './file-content/file-content.component';
 import { ViewContentComponent } from './view-content/view-content.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { AddContentComponent } from './add-content/add-content.component';
 
 //material
@@ -31,14 +29,9 @@ import { ThesisService } from './service/thesis.service';
     LogInComponent,
     FileContentComponent,
     ViewContentComponent,
-    DialogComponent,
-    DeleteDialogComponent,
     AddContentComponent,
   ],
-  entryComponents: [
-    DialogComponent,
-    DeleteDialogComponent,
-  ],
+  entryComponents: [],
   imports: [
     BrowserModule,
     AppRoutingModule,

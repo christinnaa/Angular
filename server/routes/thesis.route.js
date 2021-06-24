@@ -5,6 +5,9 @@ const thesisRoute = express.Router();
 // Thesis model
 let Thesis = require('../models/Thesis');
 
+
+//RESTful API using Express
+
 // Add or Create Thesis
 thesisRoute.route('/create').post((req, res, next) => {
     Thesis.create(req.body, (error, data) => {
@@ -38,6 +41,18 @@ thesisRoute.route('/read/:id').get((req, res) => {
   })
 })
 
+// Delete Thesis
+thesisRoute.route('/delete/:id').delete((req, res, next) => {
+  Thesis.findByIdAndRemove(req.params.id, (error, data) => {
+  if (error) {
+    return next(error);
+  } else {
+    res.status(200).json({
+      msg: data
+    })
+  }
+})
+})
 
 // Update Thesis
 thesisRoute.route('/update/:id').put((req, res, next) => {
@@ -50,19 +65,6 @@ thesisRoute.route('/update/:id').put((req, res, next) => {
     } else {
       res.json(data)
       console.log('Content updated successfully')
-    }
-  })
-})
-
-// Delete Thesis
-thesisRoute.route('/delete/:id').delete((req, res, next) => {
-    Thesis.findByIdAndRemove(req.params.id, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.status(200).json({
-        msg: data
-      })
     }
   })
 })

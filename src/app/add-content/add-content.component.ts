@@ -1,6 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Thesis } from '../interface/Thesis';

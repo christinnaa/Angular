@@ -1,13 +1,9 @@
 import {OnInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
-import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { ThesisService } from '../service/thesis.service';
 import { Thesis } from '../interface/Thesis';
 import { ActivatedRoute, Router } from "@angular/router";
-
-
 
 /**
  * @update Basic use of `<table mat-table>`
@@ -26,6 +22,8 @@ export class FileContentComponent implements OnInit {
   dataSource: MatTableDataSource<Thesis>;
   @ViewChild(MatPaginator, { static: false })
   paginator: MatPaginator;
+
+  //columns displayed in the table
   displayedColumns: string[] = ['title', 'author', 'department', 'actions'];
 
   constructor(private thesisService: ThesisService, private router: Router
@@ -53,23 +51,12 @@ export class FileContentComponent implements OnInit {
     if(window.confirm('Are you sure you want to permanently delete this content?')) {
       const data = this.dataSource.data
         
-          
+
+          //splice method is used when an item in the table is removed and to be replaced by another
           data.splice ((this.paginator.pageIndex * this.paginator.pageSize) +index, 1);
           this.dataSource.data = data;
           this.thesisService.deleteThesis(thesis._id).subscribe()
         }
           
     }
-  }
-
-
-
-
-
-
-
-  // constructor(public dialog: MatDialog) { }
-
-  // openDeleteDialog() {
-  //  this.dialog.open(DeleteDialogComponent);
-  // }
+}
