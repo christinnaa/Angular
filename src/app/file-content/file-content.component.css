@@ -338,11 +338,11 @@ table {
 }
 
 .author-table {
-  width: 250px;
+  width: 300px;
 }
 
-.department-table {
-  width: 400px;
+.dateApproved-table {
+  width: 480px;
 }
 
 .mat-table{
@@ -369,7 +369,7 @@ table {
   height: 25px;
   color: #986c62;
   margin-top: 5px !important;
-  margin-left: 90px;
+  margin-left: 100px;
 }
 
 .delete-icon:hover {

@@ -1,8 +1,8 @@
-const mongoose = require('mongoose'); //mongoose allows us to interact with the mongodb
+//mongoose allows us to interact with the mongodb
+const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema;
 
 // Define collection and schema
-// Thesis Schema for "theses" collection in the mongodb
 let Thesis = new Schema(
 {
    title: {
@@ -11,17 +11,18 @@ let Thesis = new Schema(
    author: {
       type: String
    },
+   dateApproved: {
+      type: String
+   },
    department: {
       type: String
    },
    description: {
       type: String
-   },
-   dateUpload: {
-      type: Date, default: Date.now()
    }
 },
 
+// Thesis Schema for "theses" collection in the mongodb
    {
       collection: 'theses'
    })

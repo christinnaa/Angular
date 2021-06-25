@@ -73,15 +73,13 @@
                 <div class="container-table">
 
                     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-                        <!--- Note that these columns can be defined in any order.
-                              The actual rendered columns are set as a property on the row definition" -->
                       
                         <!-- Name Column -->
                         <ng-container matColumnDef="title">
                           <th mat-header-cell *matHeaderCellDef class="title-table"> Title </th>
                           <td mat-cell *matCellDef="let thesis"  routerLink="/view-content/{{thesis._id}}"> {{thesis.title}} </td>
                         </ng-container>
+                        
                         <!-- Name Column -->
                         <ng-container matColumnDef="author">
                             <th mat-header-cell *matHeaderCellDef class="author-table"> Author </th>
@@ -89,9 +87,9 @@
                           </ng-container>
                                                
                         <!-- Name Column -->
-                        <ng-container matColumnDef="department" class="department-table">
-                          <th mat-header-cell *matHeaderCellDef> Department </th>
-                          <td mat-cell *matCellDef="let thesis"> {{thesis.department}} </td>
+                        <ng-container matColumnDef="dateApproved" class="dateApproved-table">
+                          <th mat-header-cell *matHeaderCellDef> Date Approved </th>
+                          <td mat-cell *matCellDef="let thesis"> {{thesis.dateApproved| date:"longDate"}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="actions">

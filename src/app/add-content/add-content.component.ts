@@ -33,30 +33,27 @@ export class AddContentComponent {
         author: ['', [Validators.required]],
         description: ['', [Validators.required]],
         department: ['', [Validators.required]],
+        dateApproved: ['', [Validators.required]],
       })
     }
    
-    // Choose options with select-dropdown
   updateProfile(e) {
     this.addForm.get('department').setValue(e, {
       onlySelf: true
     })
   }
 
-  // Getter to access form control
   get myForm() {
     return this.addForm.controls;
   }
-
-  
 
   onSubmit() {
     this.submitted = true;
     if (!this.addForm.valid) {
       return;
-    } else {     
+    } else {
           if (window.confirm('Are you sure you want to add this content?')) {
-            this.thesisService.CreateThesis(this.addForm.value)
+              this.thesisService.CreateThesis(this.addForm.value)
                 .subscribe(res => {
                   console.log('Content added successfully!')
                   this.router.navigateByUrl('/content');
@@ -67,20 +64,3 @@ export class AddContentComponent {
       }
     }
   }
-    
-
-
-
-
-
-
-
-
-
-
-
-  // openDialog() {
-  //   this.dialog.open(DialogComponent);
-  // }
-
-

@@ -6,6 +6,7 @@ import { ViewContentComponent } from './view-content/view-content.component';
 import { AddContentComponent } from './add-content/add-content.component';
 
 //setting up the routes for the project
+//these are configured in the html of a specific compoenent like [routerLink]="'/content'"
 const routes: Routes = [	{
   path: '', pathMatch: 'full', redirectTo: 'login' },
 { path: 'content', component: FileContentComponent },

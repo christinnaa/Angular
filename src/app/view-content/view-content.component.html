@@ -60,7 +60,7 @@
                     <div class="input-container">
                         <div class="top-container">
                             <div class="form-group">
-                                <h5 class="input-text">Title:</h5>
+                                <h5 class="input-text">Approved Title:</h5>
                                 <input class="form-control" placeholder="Thesis Title" type="text" formControlName="title" />
                                 <!-- error -->
                                 <div class="invalid-feedback" *ngIf="submitted && myForm.title.errors?.required">
@@ -68,7 +68,7 @@
                                 </div>
                             </div> <br>
                         </div>
-
+                        
                         <div class="bottom-container">
                             <div class="input-area-left">
                                 <div class="form-group">
@@ -82,7 +82,16 @@
 
                              </div>
 
-
+                             <div class="input-area-middle">
+                                <div class="form-group">
+                                    <h5 class="input-text">Date Approved:</h5>
+                                    <input class="form-control" placeholder="Enter Date" type="date" formControlName="dateApproved"/>
+                                    <!-- error -->
+                                     <div class="invalid-feedback" *ngIf="submitted && myForm.dateApproved.errors?.required">
+                                        Date is required.
+                                    </div>
+                                </div>
+                             </div>   
                             <div class="input-area-right">
                                 <div class="form-group">
                                     <h5 class="input-text">Department:</h5>

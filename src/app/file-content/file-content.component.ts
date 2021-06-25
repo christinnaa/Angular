@@ -24,7 +24,7 @@ export class FileContentComponent implements OnInit {
   paginator: MatPaginator;
 
   //columns displayed in the table
-  displayedColumns: string[] = ['title', 'author', 'department', 'actions'];
+  displayedColumns: string[] = ['title', 'author', 'dateApproved', 'actions'];
 
   constructor(private thesisService: ThesisService, private router: Router
     ) { 
@@ -36,6 +36,7 @@ export class FileContentComponent implements OnInit {
   this.readThesis();
   }
 
+  //reads thesis content to be shown in the table
   readThesis(){
     this.thesisService.getTheses().subscribe((data: Thesis[]) => {
      this.Thesis = data;
@@ -49,10 +50,8 @@ export class FileContentComponent implements OnInit {
 
   removeThesis (thesis: { _id: string; }, index: any) {
     if(window.confirm('Are you sure you want to permanently delete this content?')) {
-      const data = this.dataSource.data
-        
+      const data = this.dataSource.data        
 
-          //splice method is used when an item in the table is removed and to be replaced by another
           data.splice ((this.paginator.pageIndex * this.paginator.pageSize) +index, 1);
           this.dataSource.data = data;
           this.thesisService.deleteThesis(thesis._id).subscribe()

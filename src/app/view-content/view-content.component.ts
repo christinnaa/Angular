@@ -34,6 +34,7 @@ export class ViewContentComponent implements OnInit {
         author: ['', [Validators.required]],
         description: ['', [Validators.required]],
         department: ['', [Validators.required]],
+        dateApproved: ['', [Validators.required]],
       })
     }
    
@@ -49,6 +50,8 @@ export class ViewContentComponent implements OnInit {
     return this.editForm.controls;
   }
 
+  //when we try to get and read the specific thesis' metadata,
+  // we need to set the value of it on how it is saved in our database
   getThesis(id: string) {
     this.thesisService.getThesis(id).subscribe(data => {
       this.editForm.setValue({
@@ -56,19 +59,24 @@ export class ViewContentComponent implements OnInit {
         author: data['author'],
         department: data['department'],
         description: data['description'],
+        dateApproved: data['dateApproved'],
       });
     });
   }
 
+  //updating the thesis metadata, this code requires the user to input a non-emoty value
   updateThesis() {
     this.editForm = this.fb.group({
       title: ['', [Validators.required]],
       author: ['', [Validators.required]],
       description: ['', [Validators.required]],
       department: ['', [Validators.required]],
+      dateApproved: ['', [Validators.required]],
     })
   }
 
+  //on submission if-else statement which shows a prompt to make sure that the 
+  //user wants to update any changes to the content
   onSubmit() {
     this.submitted = true;
     if (!this.editForm.valid) {
@@ -88,12 +96,4 @@ export class ViewContentComponent implements OnInit {
   }
     
 }
-
-
-
-//   openDialog() {
-//     this.dialog.open(DialogComponent);
-//  }
-// }
- 
 

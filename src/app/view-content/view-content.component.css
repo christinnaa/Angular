@@ -252,9 +252,9 @@ body{
   background-color: #fcfcfc;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 90%;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 12px;
   padding-bottom: 10px;
   border-radius: 20px;
   border: solid 2.5px #986c62;
@@ -270,7 +270,8 @@ body{
   font-size: 18px;
 }
 .top-container .form-control {
-  width: 730px;
+  width: 970px;
+  border-radius: 14px;
 }
 .bottom-container {
   display: flex;
@@ -286,11 +287,11 @@ body{
 .form-control{
   display: flex;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 14px;
   border: 2.5px solid #986c62; 
 	padding: 9px 15px;
 	margin: 9px 6px;
-	width: 325px;
+	width: 310px;
   font-size: 16px;
   outline: none;
 }
@@ -299,13 +300,16 @@ body{
 }
 .last-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   margin-top: 15px;
+  align-items: center;
 }
 
 .last-container .form-control {
-  width: 730px;
+  width: 970px;
+  border-radius: 14px;
 }
 
 .button-container {
@@ -317,7 +321,7 @@ body{
   margin-left: auto;
 }
 button {
-	border-radius: 20px;
+	border-radius: 15px;
 	border: 1px solid #9b3131;
 	background-color: #9b3131;
 	color: #FFFFFF;
@@ -344,7 +348,15 @@ button:focus {
   margin-right: auto;
   padding-left: 5px;
   margin-top: 10px;
-  margin-left: 60px;
+  margin-left: 23px;
+}
+.input-area-middle {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5px;
+  margin-top: 10px;
 }
 
 .input-area-right {
@@ -354,10 +366,15 @@ button:focus {
   margin-right: auto;
   padding-right: 5px;
   margin-top: 10px;
-  margin-right: 60px;
+  margin-right: 23px;
 }
 
 .save-button {
   display: block;
   margin: auto;
+}
+
+.invalid-feedback {
+  margin-left: 15px;
+  font-size: 14px;
 }
